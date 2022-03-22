@@ -1,0 +1,14 @@
+{
+  "name": "Startup page",
+  "version": "1.0.0",
+  "description": "Personal startup page",
+  "manifest_version": 3,
+  "author": "Erik Koci",
+  "permissions": [
+    "tabs",
+    "webNavigation"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}
