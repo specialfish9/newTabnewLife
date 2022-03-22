@@ -4,10 +4,7 @@
   "description": "Chrome startup page",
   "manifest_version": 3,
   "author": "Erik Koci",
-  "permissions": [
-    "tabs",
-    "webNavigation"
-  ],
+  "permissions": [],
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
@@ -19,5 +16,6 @@
     "128": "assets/img/icon128.png",
     "48": "assets/img/icon128.png",
     "16": "assets/img/icon128.png"
-  }
+  },
+  "homepage_url": "https://github.com/kocierik/newTabnewLife"
 }
