@@ -1,7 +1,7 @@
 {
-  "name": "Startup page",
+  "name": "new Tab New Life",
   "version": "1.0.0",
-  "description": "Personal startup page",
+  "description": "Chrome startup page",
   "manifest_version": 3,
   "author": "Erik Koci",
   "permissions": [
@@ -10,5 +10,14 @@
   ],
   "chrome_url_overrides": {
     "newtab": "index.html"
+  },
+  "action": {
+    "default_title": "newTabNewLife",
+    "default_icon": "assets/img/icon128.png"
+  },
+  "icons": {
+    "128": "assets/img/icon128.png",
+    "48": "assets/img/icon128.png",
+    "16": "assets/img/icon128.png"
   }
 }
