@@ -3,4 +3,4 @@
 Homepage for my web browsers
 
 
-<img src="./assets/img/page.png" />
+<img src="./assets/img/pagePreview.png" />
