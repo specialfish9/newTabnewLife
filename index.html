@@ -12,13 +12,16 @@
 </head>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
   html {
     height: 100%;
     width: 100%;
   }
 
   body {
-    background-color: black;
+    background-image: url("assets/img/Futurama-ipno.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     font-family: 'Red Hat Mono', monospace;
     height: 100%;
@@ -42,20 +45,20 @@
   }
 
   input {
-    background-color: black;
-    border: 1px solid #fff;
+    background-color: white;
+    border: 1px solid #000;
     border-radius: 5px;
-    color: white;
+    color: black;
     width: 75vh;
     padding: 1em;
   }
 
   .container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    flex-direction: column;
+    margin: auto;
+    width: 50%;
+    margin-top: 15%;
+    padding: 10;
+    background-color: #dddddd99;
   }
 
   .content {
@@ -64,6 +67,8 @@
     align-items: center;
     padding: 2rem;
     font-size: 1rem;
+    font-weight: 900;
+    color: black;
   }
 
   .elements {
@@ -79,19 +84,65 @@
     flex-direction: column;
   }
 
-  .title {
+  #cont {
+    position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-weight: 400;
-    font-size: 3.5rem;
     padding-bottom: 4rem;
+    margin-bottom: 80;
+  }
+
+  .title {
+    position: absolute;
+    font-weight: 900;
+    font-size: 5.5rem;
+    font-family: 'Righteous', cursive;
+    margin-left: 3;
+    margin-top: 4;
+  }
+
+  #title1{
+    color: #ff0000
+  }
+  #title2{
+    color: #ffff00
+  }
+  #title3{
+    color: #00ff00
+  }
+  #title4{
+    color: #00ffff
+  }
+  #title5{
+    color: #0000ff
+  }
+  #title6{
+    color: #ff00ff
   }
 </style>
 
 <body>
   <div class="container">
-    <div class="title">Google</div>
+    <div id="cont">
+    <div class="title" id="title1">
+        <div class="title" id="title2">
+          <div class="title" id="title3">
+            <div class="title" id="title4">
+                <div class="title" id="title5">
+                  <div class="title" id="title6">
+                    Google
+                  </div>
+                Google
+            </div>
+              Google
+            </div>
+              Google
+            </div>
+            Google
+        </div>
+        Google
+      </div>
+    </div>
     <div class="search-bar">
       <form method="get" action="https://www.google.com/search">
         <input type="text" autofocus="autofocus" name="query" placeholder="grep '$PATH' google.com" />
