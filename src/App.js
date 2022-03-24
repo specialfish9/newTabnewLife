@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
 
-  const [element, setElement] = useState(true)
+  const [element, setElement] = useState(false)
 
   const showElement = () => {
     if (element) {
@@ -29,7 +29,9 @@ function App() {
           <input type="text" name="query" placeholder="grep '$PATH' google.com" />
         </form>
       </div>
-      <div className="element_block" id="block">  </div>
+      <div className="element_block" id="block">
+
+      </div>
       <div className="elements">
         <div className="content"> <a href="https://web.telegram.org" target="_blank"> Telegram </a> </div>
         <div className="content"> <a href="https://github.com" target="_blank"> Github </a> </div>
