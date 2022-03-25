@@ -30,7 +30,7 @@ function App() {
         </form>
       </div>
       <div className="element_block" id="block">
-
+        <div className="exit_button" onClick={showElement}>x</div>
       </div>
       <div className="elements">
         <div className="content"> <a href="https://web.telegram.org" target="_blank"> Telegram </a> </div>

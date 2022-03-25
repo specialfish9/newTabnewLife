@@ -92,11 +92,18 @@
   .element_block{
     position: fixed;
     display: flex;
-    background-color: red;
-    opacity: 0.1;
-    justify-content: center;
-    align-items: center;
+    background-color: #0C062C;
+    opacity: 0.8;
     width: 50%;
     height: 50%;
+    visibility: hidden;
+    justify-content: right;
+    align-items:flex-start; 
   }
-
+  
+  .exit_button{
+    display: flex;
+    font-size: 1.5rem;
+    padding: 1rem;
+    cursor: pointer;
+  }
