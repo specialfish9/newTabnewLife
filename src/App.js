@@ -26,7 +26,7 @@ function App() {
       <div className="title">Google</div>
       <div className="search-bar">
         <form method="get" action="https://www.google.com/search">
-          <input type="text" name="query" placeholder="grep '$PATH' google.com" />
+          <input type="text" id="bar" name="query" placeholder="grep '$PATH' google.com" />
         </form>
       </div>
       <div className="element_block" id="block">
@@ -35,8 +35,8 @@ function App() {
         </div>
         <div className="input_site">
           <div className="add_item">
-            <input type="text" id="name" placeholder="Insert name" />
-            <input type="text" id="site" placeholder="Insert link" />
+            Bookmark name<input type="text" id="name" placeholder="Insert name" />
+            Bookmark link<input type="text" id="site" placeholder="Insert link" />
           </div>
         </div>
       </div>
