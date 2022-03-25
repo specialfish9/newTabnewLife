@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import './App.css';
 import elem from './elements'
 function App() {
@@ -6,6 +6,9 @@ function App() {
   const [element, setElement] = useState(false)
   const [inputName, setInputName] = useState('')
   const [inputSite, setInputSite] = useState('')
+  const [count, setCount] = useState(0)
+
+  let favorites = []
 
   const showElement = () => {
     if (element) {
@@ -18,14 +21,24 @@ function App() {
     }
   }
 
-  const createElement = () => {
-    console.log(inputName)
-    let element = {
+  useEffect(() => {
+    if (localStorage.getItem("favorites") != null) favorites = localStorage.getItem("favorites")
+    if (localStorage.getItem("count") != null) setCount(parseInt(localStorage.getItem("count")) + 1)
+  }, [])
+
+  const createElement = (e) => {
+    e.preventDefault()
+    if (localStorage.getItem("count") == null) localStorage.setItem("count", 0)
+    setCount(count + 1)
+    let newEl = [{
+      "id": count,
       "name": inputName,
       "link": inputSite
-    }
-    elem.push(element)
-    console.log(elem)
+    }]
+    localStorage.setItem(count, JSON.stringify(newEl))
+    localStorage.setItem("count", count)
+    setInputName("")
+    setInputSite("")
   }
 
   const getName = (e) => {
