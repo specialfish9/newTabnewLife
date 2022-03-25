@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './App.css';
-
+import elem from './elements'
 function App() {
 
   const [element, setElement] = useState(false)
+  const [inputName, setInputName] = useState('')
+  const [inputSite, setInputSite] = useState('')
 
   const showElement = () => {
     if (element) {
@@ -17,12 +19,24 @@ function App() {
   }
 
   const createElement = () => {
+    console.log(inputName)
     let element = {
-      name = document.getElementById("name").textContent,
-      link = document.getElementById("site").textContent
+      "name": inputName,
+      "link": inputSite
     }
+    elem.push(element)
+    console.log(elem)
   }
 
+  const getName = (e) => {
+    e.preventDefault()
+    setInputName(e.target.value)
+  }
+
+  const getSite = (e) => {
+    e.preventDefault()
+    setInputSite(e.target.value)
+  }
 
   return (
     <div className="container">
@@ -38,8 +52,8 @@ function App() {
         </div>
         <div className="input_site">
           <div className="add_item">
-            <span>Bookmark name</span><input type="text" id="name" className="input_text" placeholder="Insert name" />
-            <span>Bookmark link</span><input type="text" id="site" className="input_text" placeholder="Insert link" />
+            <span>Bookmark name</span><input type="text" value={inputName} onChange={getName} id="name" className="input_text" placeholder="Insert name" />
+            <span>Bookmark link</span><input type="text" value={inputSite} onChange={getSite} id="site" className="input_text" placeholder="Insert link" />
             <input type="submit" className="send_button" value="Confirm" onClick={createElement} />
           </div>
         </div>
