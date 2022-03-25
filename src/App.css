@@ -60,6 +60,13 @@
     font-size: 1rem;
   }
 
+  .send_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
   .elements {
     display: flex;
     flex-direction: row;
@@ -95,7 +102,7 @@
     position: fixed;
     display: flex;
     background-color: #0C062C;
-    opacity: 0.8;
+    opacity: 0.95;
     width: 50%;
     height: 50%;
     visibility: hidden;
@@ -133,3 +140,9 @@
     display: flex;
     align-items: center;
   }
+
+ .input_text{
+    width: 50vh;
+  } 
+
+  

@@ -17,7 +17,10 @@ function App() {
   }
 
   const createElement = () => {
-
+    let element = {
+      name = document.getElementById("name").textContent,
+      link = document.getElementById("site").textContent
+    }
   }
 
 
@@ -35,8 +38,9 @@ function App() {
         </div>
         <div className="input_site">
           <div className="add_item">
-            Bookmark name<input type="text" id="name" placeholder="Insert name" />
-            Bookmark link<input type="text" id="site" placeholder="Insert link" />
+            <span>Bookmark name</span><input type="text" id="name" className="input_text" placeholder="Insert name" />
+            <span>Bookmark link</span><input type="text" id="site" className="input_text" placeholder="Insert link" />
+            <input type="submit" className="send_button" value="Confirm" onClick={createElement} />
           </div>
         </div>
       </div>
