@@ -30,7 +30,15 @@ function App() {
         </form>
       </div>
       <div className="element_block" id="block">
-        <div className="exit_button" onClick={showElement}>x</div>
+        <div className="quit_line">
+          <div className="exit_button" onClick={showElement}>x</div>
+        </div>
+        <div className="input_site">
+          <div className="add_item">
+            <input type="text" id="name" placeholder="Insert name" />
+            <input type="text" id="site" placeholder="Insert link" />
+          </div>
+        </div>
       </div>
       <div className="elements">
         <div className="content"> <a href="https://web.telegram.org" target="_blank"> Telegram </a> </div>
@@ -38,7 +46,7 @@ function App() {
         <div className="content"> <a href="https://web.whatsapp.com" target="_blank"> Whatsapp </a> </div>
         <div className="content add" onClick={showElement}> + </div>
       </div>
-    </div>
+    </div >
   );
 }
 
