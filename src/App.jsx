@@ -1,15 +1,15 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-import elem from './elements'
+import Box from './Box';
 function App() {
 
   const [element, setElement] = useState(false)
   const [inputName, setInputName] = useState('')
   const [inputSite, setInputSite] = useState('')
   const [count, setCount] = useState(0)
-
-  let favorites = []
-
+  const [favorites1, setFavorites1] = useState([])
+  let list = []
+  let i = 0
   const showElement = () => {
     if (element) {
       document.getElementById("block").style.visibility = "hidden"
@@ -22,23 +22,30 @@ function App() {
   }
 
   useEffect(() => {
-    if (localStorage.getItem("favorites") != null) favorites = localStorage.getItem("favorites")
     if (localStorage.getItem("count") != null) setCount(parseInt(localStorage.getItem("count")) + 1)
-  }, [])
+    while (localStorage.getItem("el" + i) != null) {
+      list.push(JSON.parse(localStorage.getItem("el" + i)))
+      i++
+    }
+    console.log(list)
+  }, [count])
 
-  const createElement = (e) => {
+
+  const createElement = async (e) => {
     e.preventDefault()
-    if (localStorage.getItem("count") == null) localStorage.setItem("count", 0)
-    setCount(count + 1)
-    let newEl = [{
+    let newEl = {
       "id": count,
-      "name": inputName,
+      "nameSite": inputName,
       "link": inputSite
-    }]
-    localStorage.setItem(count, JSON.stringify(newEl))
+    }
+    setCount(count + 1)
+    localStorage.setItem("el" + count, JSON.stringify(newEl))
+    list.push(await JSON.parse(localStorage.getItem("el" + count)))
     localStorage.setItem("count", count)
     setInputName("")
     setInputSite("")
+    setElement(false)
+    showElement()
   }
 
   const getName = (e) => {
@@ -72,7 +79,8 @@ function App() {
         </div>
       </div>
       <div className="elements">
-        <div className="content"> <a href="https://web.telegram.org" target="_blank"> Telegram </a> </div>
+        {<Box list={list} />}
+        < div className="content"> <a href="https://web.telegram.org" target="_blank"> Telegram </a> </div>
         <div className="content"> <a href="https://github.com" target="_blank"> Github </a> </div>
         <div className="content"> <a href="https://web.whatsapp.com" target="_blank"> Whatsapp </a> </div>
         <div className="content add" onClick={showElement}> + </div>
