@@ -1,13 +1,11 @@
 import React from 'react'
 
 function Box(props) {
-  let list = props.list
-  console.log(list)
-
-
+  let list1 = props.nameSite
+  console.log(list1)
   return (
     <div className="content"> <a target="_blank">
-      {list.map(item => item.link)}
+      {list1}
     </a> </div>
   );
 }
