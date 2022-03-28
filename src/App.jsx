@@ -12,8 +12,8 @@ function App() {
 
 
   let list = []
-  let i = 0
-  let j = 0
+  let i = 1
+  let j = 1
   const showElement = () => {
     if (element) {
       document.getElementById("block").style.visibility = "hidden"
@@ -26,8 +26,11 @@ function App() {
   }
 
   useEffect(() => {
-    while (localStorage.getItem("el" + j) != null) {
-      favoritesAll.push(JSON.parse(localStorage.getItem("el" + j)))
+    (localStorage.getItem("count") == null) ? localStorage.setItem("count", 0) : setCount(localStorage.getItem("count"))
+    while (j < 10) {// (localStorage.getItem("el" + j) != null) {
+      if (localStorage.getItem("el" + j) != null) {
+        favoritesAll.push(JSON.parse(localStorage.getItem("el" + j)))
+      }
       j++
     }
 
