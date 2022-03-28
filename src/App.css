@@ -89,13 +89,17 @@
     padding-bottom: 4rem;
   }
 
-  .add{
-    border: 1px solid #fff;
+  .contentAdd{
+    color: gray;
     border-radius: 100%;
     font-size: 2rem;
     height: 2.5rem;
     width: 2.5rem;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
   }
 
   .element_block{
@@ -114,6 +118,7 @@
     display: flex;
     font-size: 1.5rem;
     cursor: pointer;
+    color: gray;
   }
 
   .input_site{

@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import './App.css';
 import Box from './Box';
+import { favoriteContext } from './favoriteContext'
 function App() {
 
   const [element, setElement] = useState(false)
@@ -8,6 +9,8 @@ function App() {
   const [inputSite, setInputSite] = useState('')
   const [count, setCount] = useState(0)
   const [favoritesAll, setFavoritesAll] = useState([])
+
+
   let list = []
   let i = 0
   let j = 0
@@ -91,12 +94,9 @@ function App() {
       </div>
       <div className="elements">
         {
-          favoritesAll.map(item => <Box link={item.link} nameSite={item.nameSite} key={item.id} />)
+          favoritesAll.map(item => <favoriteContext.Provider value={[favoritesAll, setFavoritesAll]}> <Box link={item.link} nameSite={item.nameSite} key={item.id} id={item.id} /> </favoriteContext.Provider>)
         }
-        < div className="content"> <a href="https://web.telegram.org" target="_blank"> Telegram </a> </div>
-        <div className="content"> <a href="https://github.com" target="_blank"> Github </a> </div>
-        <div className="content"> <a href="https://web.whatsapp.com" target="_blank"> Whatsapp </a> </div>
-        <div className="content add" onClick={showElement}> + </div>
+        <div className="contentAdd" onClick={showElement}> + </div>
       </div>
     </div >
   );

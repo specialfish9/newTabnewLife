@@ -1,0 +1,14 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    flex-direction: column;
+    margin: 2rem;
+  }
+
+.delete_button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
