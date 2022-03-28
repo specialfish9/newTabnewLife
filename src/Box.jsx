@@ -1,12 +1,10 @@
 import React from 'react'
 
-function Box(props) {
-  console.log(props)
-
+function Box({ nameSite, link }) {
   return (
-    <div className="content"> <a href={props.link} target="_blank">
-      {props.nameSite}
-    </a> </div>
+    <div className="content" > <a href={link} target="_blank">
+      {nameSite}
+    </a> </div >
   );
 }
 

@@ -7,13 +7,10 @@ function App() {
   const [inputName, setInputName] = useState('')
   const [inputSite, setInputSite] = useState('')
   const [count, setCount] = useState(0)
-  const [favorites1, setFavorites1] = useState([])
-  const [favorites2, setFavorites2] = useState([])
   const [favoritesAll, setFavoritesAll] = useState([])
   let list = []
   let i = 0
   let j = 0
-  let serie1 = [], serie2 = []
   const showElement = () => {
     if (element) {
       document.getElementById("block").style.visibility = "hidden"
@@ -39,12 +36,7 @@ function App() {
       list.push(JSON.parse(localStorage.getItem("el" + i)))
       i++
     }
-    //console.log(list)
-    serie1 = list.map(item => item.link)
-    serie2 = list.map(item => item.nameSite)
-    setFavorites1(serie1)
-    setFavorites2(serie2)
-    favoritesAll.map(item => console.log(item))
+
   }, [count])
 
 
@@ -99,7 +91,7 @@ function App() {
       </div>
       <div className="elements">
         {
-          favoritesAll.map(item => <Box link={item.link} nameSite={item.nameSite} />)
+          favoritesAll.map(item => <Box link={item.link} nameSite={item.nameSite} key={item.id} />)
         }
         < div className="content"> <a href="https://web.telegram.org" target="_blank"> Telegram </a> </div>
         <div className="content"> <a href="https://github.com" target="_blank"> Github </a> </div>
