@@ -9,8 +9,10 @@ function App() {
   const [count, setCount] = useState(0)
   const [favorites1, setFavorites1] = useState([])
   const [favorites2, setFavorites2] = useState([])
+  const [favoritesAll, setFavoritesAll] = useState([])
   let list = []
   let i = 0
+  let j = 0
   let serie1 = [], serie2 = []
   const showElement = () => {
     if (element) {
@@ -24,21 +26,29 @@ function App() {
   }
 
   useEffect(() => {
+    while (localStorage.getItem("el" + j) != null) {
+      favoritesAll.push(JSON.parse(localStorage.getItem("el" + j)))
+      j++
+    }
+
+  }, [])
+
+  useEffect(() => {
     if (localStorage.getItem("count") != null) setCount(parseInt(localStorage.getItem("count")) + 1)
     while (localStorage.getItem("el" + i) != null) {
       list.push(JSON.parse(localStorage.getItem("el" + i)))
       i++
     }
     //console.log(list)
-    serie1 = list.map(item => item.nameSite)
-    serie2 = list.map(item => item.link)
-    console.log(serie1)
+    serie1 = list.map(item => item.link)
+    serie2 = list.map(item => item.nameSite)
     setFavorites1(serie1)
     setFavorites2(serie2)
+    favoritesAll.map(item => console.log(item))
   }, [count])
 
 
-  const createElement = async (e) => {
+  const createElement = (e) => {
     e.preventDefault()
     let newEl = {
       "id": count,
@@ -47,8 +57,9 @@ function App() {
     }
     setCount(count + 1)
     localStorage.setItem("el" + count, JSON.stringify(newEl))
-    list.push(await JSON.parse(localStorage.getItem("el" + count)))
+    list.push(JSON.parse(localStorage.getItem("el" + count)))
     localStorage.setItem("count", count)
+    favoritesAll.push(JSON.parse(localStorage.getItem("el" + count)))
     setInputName("")
     setInputSite("")
     setElement(false)
@@ -87,7 +98,9 @@ function App() {
         </div>
       </div>
       <div className="elements">
-        {favorites1.map(item => <Box nameSite={item} />)}
+        {
+          favoritesAll.map(item => <Box link={item.link} nameSite={item.nameSite} />)
+        }
         < div className="content"> <a href="https://web.telegram.org" target="_blank"> Telegram </a> </div>
         <div className="content"> <a href="https://github.com" target="_blank"> Github </a> </div>
         <div className="content"> <a href="https://web.whatsapp.com" target="_blank"> Whatsapp </a> </div>

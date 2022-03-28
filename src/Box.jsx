@@ -1,11 +1,11 @@
 import React from 'react'
 
 function Box(props) {
-  let list1 = props.nameSite
-  console.log(list1)
+  console.log(props)
+
   return (
-    <div className="content"> <a target="_blank">
-      {list1}
+    <div className="content"> <a href={props.link} target="_blank">
+      {props.nameSite}
     </a> </div>
   );
 }
