@@ -94,7 +94,7 @@ function App() {
       </div>
       <div className="elements">
         {
-          favoritesAll.map(item => <favoriteContext.Provider value={[favoritesAll, setFavoritesAll]}> <Box link={item.link} nameSite={item.nameSite} key={item.id} id={item.id} /> </favoriteContext.Provider>)
+          favoritesAll.map(item => <favoriteContext.Provider value={[favoritesAll, setFavoritesAll]} key={item.id}> <Box link={item.link} nameSite={item.nameSite} id={item.id} key={item.id} /> </favoriteContext.Provider>)
         }
         <div className="contentAdd" onClick={showElement}> + </div>
       </div>
