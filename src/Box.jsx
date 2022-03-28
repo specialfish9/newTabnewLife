@@ -14,17 +14,17 @@ function Box({ nameSite, link, id }) {
   }
 
   const overOn = () => {
-    document.getElementById("checkHover").style.display = "block"
+    document.getElementsByName("checkHover").forEach(item => item.style.visibility = "visible") //style.display = "flex"
   }
   const overOf = () => {
-    document.getElementById("checkHover").style.display = "none"
+    document.getElementsByName("checkHover").forEach(item => item.style.visibility = "hidden")// .style.display = "none"
   }
 
 
   return (
     <div className="content" onMouseOver={overOn} onMouseOut={overOf}> <a href={link} target="_blank">
       {nameSite} </a>
-      <div className="delete_button" id="checkHover" onClick={deleteElement} >x</div>
+      <div className="delete_button" id="test" name="checkHover" onClick={deleteElement} >x</div>
     </div >
   );
 }

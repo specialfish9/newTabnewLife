@@ -52,15 +52,7 @@
     flex-direction: column;
   }
 
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem;
-    font-size: 1rem;
-  }
-
-  .send_button{
+   .send_button{
     display: flex;
     justify-content: center;
     align-items: center;
