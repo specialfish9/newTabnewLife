@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     (localStorage.getItem("count") == null) ? localStorage.setItem("count", 0) : setCount(localStorage.getItem("count"))
-    while (j < 10) {// (localStorage.getItem("el" + j) != null) {
+    while (j < 1000) {// (localStorage.getItem("el" + j) != null) {
       if (localStorage.getItem("el" + j) != null) {
         favoritesAll.push(JSON.parse(localStorage.getItem("el" + j)))
       }
@@ -80,7 +80,7 @@ function App() {
       <div className="title">Google</div>
       <div className="search-bar">
         <form method="get" action="https://www.google.com/search">
-          <input type="text" id="bar" name="query" placeholder="grep '$PATH' google.com" />
+          <input type="text" id="bar" name="query" placeholder="make a wish!" />
         </form>
       </div>
       <div className="element_block" id="block">
@@ -89,8 +89,8 @@ function App() {
         </div>
         <div className="input_site">
           <div className="add_item">
-            <span>Bookmark name</span><input type="text" value={inputName} onChange={getName} id="name" className="input_text" placeholder="Insert name" />
-            <span>Bookmark link</span><input type="text" value={inputSite} onChange={getSite} id="site" className="input_text" placeholder="Insert link" />
+            <span>Bookmark name</span><input type="text" value={inputName} onChange={getName} id="name" className="input_text" placeholder="google" />
+            <span>Bookmark link</span><input type="text" value={inputSite} onChange={getSite} id="site" className="input_text" placeholder="https://google.com" />
             <input type="submit" className="send_button" value="Confirm" onClick={createElement} />
           </div>
         </div>
