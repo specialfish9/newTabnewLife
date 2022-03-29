@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Box from './Box';
 import { favoriteContext } from './favoriteContext'
@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     (localStorage.getItem("count") == null) ? localStorage.setItem("count", 0) : setCount(localStorage.getItem("count"))
-    while (j < 1000) {// (localStorage.getItem("el" + j) != null) {
+    while (j < 1000) {
       if (localStorage.getItem("el" + j) != null) {
         favoritesAll.push(JSON.parse(localStorage.getItem("el" + j)))
       }

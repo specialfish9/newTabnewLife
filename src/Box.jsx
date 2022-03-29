@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './Box.css'
 import { favoriteContext } from './favoriteContext'
 function Box({ nameSite, link, id }) {
@@ -6,7 +6,7 @@ function Box({ nameSite, link, id }) {
   const [favorite, setFavorite] = useContext(favoriteContext)
   let list = []
   list = favorite
-
+  const [selected, setSelected] = useState(0)
   const deleteElement = () => {
     list = list.filter(item => item.id !== id)
     localStorage.removeItem("el" + id)
@@ -14,17 +14,20 @@ function Box({ nameSite, link, id }) {
   }
 
   const overOn = () => {
-    document.getElementsByName("checkHover").forEach(item => item.style.visibility = "visible") //style.display = "flex"
+    let iconItem = list.filter(item => item.id === id)
+    setSelected(iconItem[0].id)
+    document.getElementById("node" + selected).style.visibility = "visible"
   }
+
   const overOf = () => {
-    document.getElementsByName("checkHover").forEach(item => item.style.visibility = "hidden")// .style.display = "none"
+    document.getElementsByName("checkHover").forEach(item => item.style.visibility = "hidden")
   }
 
 
   return (
     <div className="content" onMouseOver={overOn} onMouseOut={overOf} onClick={() => document.location = link}> <a href={link} >
       {nameSite} </a>
-      <div className="delete_button" id="test" name="checkHover" onClick={deleteElement} >x</div>
+      <div className="delete_button" id={`node` + selected} name="checkHover" onClick={deleteElement} >x</div>
     </div >
   );
 }
