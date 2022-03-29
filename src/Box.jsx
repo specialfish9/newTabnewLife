@@ -25,7 +25,7 @@ function Box({ nameSite, link, id }) {
 
 
   return (
-    <div className="content" onMouseOver={overOn} onMouseOut={overOf} onClick={() => document.location = link}> <a href={link} >
+    <div className="content" onMouseOver={overOn} onMouseOut={overOf} > <a onClick={() => document.location = link} href={link} >
       {nameSite} </a>
       <div className="delete_button" id={`node` + selected} name="checkHover" onClick={deleteElement} >x</div>
     </div >
