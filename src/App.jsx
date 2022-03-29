@@ -51,7 +51,7 @@ function App() {
     let newEl = {
       "id": count,
       "nameSite": inputName,
-      "link": inputSite
+      "link": "https://" + inputSite
     }
     setCount(count + 1)
     localStorage.setItem("el" + count, JSON.stringify(newEl))
@@ -80,7 +80,7 @@ function App() {
       <div className="title">Google</div>
       <div className="search-bar">
         <form method="get" action="https://www.google.com/search">
-          <input type="text" id="bar" name="query" placeholder="make a wish!" />
+          <input type="text" id="bar" name="query" placeholder="make a wish!" autoFocus="autofocus" />
         </form>
       </div>
       <div className="element_block" id="block">
@@ -89,9 +89,11 @@ function App() {
         </div>
         <div className="input_site">
           <div className="add_item">
-            <span>Bookmark name</span><input type="text" value={inputName} onChange={getName} id="name" className="input_text" placeholder="google" />
-            <span>Bookmark link</span><input type="text" value={inputSite} onChange={getSite} id="site" className="input_text" placeholder="https://google.com" />
-            <input type="submit" className="send_button" value="Confirm" onClick={createElement} />
+            <form>
+              <span>Bookmark name</span><input type="text" value={inputName} onChange={getName} id="name" className="input_text" placeholder="google" />
+              <span>Bookmark link</span><input type="text" value={inputSite} onChange={getSite} id="site" className="input_text" placeholder="google.com" />
+              <input type="submit" className="send_button" value="Confirm" onClick={createElement} />
+            </form>
           </div>
         </div>
       </div>

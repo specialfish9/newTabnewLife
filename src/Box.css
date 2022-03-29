@@ -16,8 +16,10 @@
   padding-top: 0.5rem;
 }
 a{
-  padding: 0px;
+  padding: 5px;
   margin:0px;
+  text-decoration: none;
+  color: inherit;
 }
 a:active{
 padding: 10px;
