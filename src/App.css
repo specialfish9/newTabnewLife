@@ -58,6 +58,10 @@
     cursor: pointer;
   }
 
+  .send_button:hover{
+    box-shadow: 5px 5px 10px 2px #333333 ;
+  }
+
   .elements {
     display: flex;
     flex-direction: row;
@@ -142,5 +146,9 @@
  .input_text{
     width: 50vh;
   } 
-
+  
+  .check-button{
+    display: flex;
+    gap: 1rem;  
+  }
   
