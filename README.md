@@ -1,6 +1,11 @@
 # newTabnewLife
 
 Homepage for my web browsers
+
+- `npm install` to install <em>node_modules</em>
+
+- `npm start` to launch
+
 <p align="center">
 <table>
   <tr> 
