@@ -6,6 +6,9 @@ Homepage for my web browsers
 
 - `npm start` to launch
 
+Available through these links:
+- <a href="https://chrome.google.com/webstore/detail/new-tab-new-life/ioddealhffmemabgpnchhplpkknbfemk?hl=it&authuser=0">Chrome</a>
+- <a href="https://addons.mozilla.org/it/firefox/addon/newtabnewlife/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">Firefox</a>
 <p align="center">
 <table>
   <tr> 
