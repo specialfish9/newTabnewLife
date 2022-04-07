@@ -1,9 +1,9 @@
 {
-  "name": "New Psycho life",
-  "version": "1.0.0",
+  "name": "new Tab New Life",
+  "version": "1.1.0",
   "description": "Chrome startup page",
   "manifest_version": 3,
-  "author": "Mattia Girolimetto",
+  "author": "Erik Koci",
   "permissions": [],
   "chrome_url_overrides": {
     "newtab": "index.html"
@@ -17,5 +17,5 @@
     "48": "assets/img/icon128.png",
     "16": "assets/img/icon128.png"
   },
-  "homepage_url": "https://github.com/specialfish9/newTabnewLife"
+  "homepage_url": "https://github.com/kocierik/newTabnewLife"
 }
