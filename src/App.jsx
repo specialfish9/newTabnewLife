@@ -48,11 +48,18 @@ function App() {
 
   const createElement = (e) => {
     e.preventDefault()
+
+    let url = inputSite
+    let splitted = inputSite.split("://")
+    if (splitted.length === 1)
+      url = "https://" + inputSite;
+
     let newEl = {
       "id": count,
       "nameSite": inputName,
-      "link": "https://" + inputSite
+      "link": url
     }
+
     setCount(count + 1)
     localStorage.setItem("el" + count, JSON.stringify(newEl))
     list.push(JSON.parse(localStorage.getItem("el" + count)))
