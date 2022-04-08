@@ -48,7 +48,7 @@ function App() {
   const createElement = (e) => {
     e.preventDefault()
 
-    // Check url
+    // Check url 
     let url = inputSite;
     let splitted = inputSite.split("://");
     if (splitted.length === 1)
