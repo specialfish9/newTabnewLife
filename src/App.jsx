@@ -45,10 +45,11 @@ function App() {
 
   }, [count])
 
+
   const createElement = (e) => {
     e.preventDefault()
 
-    // Check url 
+    // Check url
     let url = inputSite;
     let splitted = inputSite.split("://");
     if (splitted.length === 1)
@@ -57,7 +58,7 @@ function App() {
     let newEl = {
       "id": count,
       "nameSite": inputName,
-      "link": url 
+      "link": url
     }
     setCount(count + 1)
     localStorage.setItem("el" + count, JSON.stringify(newEl))
@@ -98,7 +99,10 @@ function App() {
             <form>
               <span>Bookmark name</span><input type="text" value={inputName} onChange={getName} id="name" className="input_text" placeholder="google" />
               <span>Bookmark link</span><input type="text" value={inputSite} onChange={getSite} id="site" className="input_text" placeholder="google.com" />
-              <input type="submit" className="send_button" value="Confirm" onClick={createElement} />
+              <div className="check-button">
+                <input type="submit" className="send_button" value="Delete" onClick={showElement} />
+                <input type="submit" className="send_button" value="Confirm" onClick={createElement} />
+              </div>
             </form>
           </div>
         </div>
