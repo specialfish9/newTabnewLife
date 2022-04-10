@@ -48,6 +48,11 @@ function App() {
 
   const createElement = (e) => {
     e.preventDefault()
+    let cnt = 1
+    while (localStorage.getItem("el" + cnt) != null) {
+      setCount(cnt + 1)
+      cnt++
+    }
 
     let url = inputSite
     let splitted = inputSite.split("://")
@@ -55,16 +60,15 @@ function App() {
       url = "https://" + inputSite;
 
     let newEl = {
-      "id": count,
+      "id": cnt,
       "nameSite": inputName,
       "link": url
     }
-
     setCount(count + 1)
-    localStorage.setItem("el" + count, JSON.stringify(newEl))
-    list.push(JSON.parse(localStorage.getItem("el" + count)))
-    localStorage.setItem("count", count)
-    favoritesAll.push(JSON.parse(localStorage.getItem("el" + count)))
+    localStorage.setItem("el" + cnt, JSON.stringify(newEl))
+    list.push(JSON.parse(localStorage.getItem("el" + cnt)))
+    localStorage.setItem("count", cnt)
+    favoritesAll.push(JSON.parse(localStorage.getItem("el" + cnt)))
     setInputName("")
     setInputSite("")
     setElement(false)
