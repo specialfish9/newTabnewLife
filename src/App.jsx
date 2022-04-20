@@ -71,6 +71,7 @@ function App() {
     showElement()
   }
 
+
   const getName = (e) => {
     e.preventDefault()
     setInputName(e.target.value)
@@ -84,7 +85,7 @@ function App() {
 
   return (
     <div className="container">
-      <div className="title">Google</div>
+      <div className="title-container"/>
       <div className="search-bar">
         <form method="get" action="https://www.google.com/search">
           <input type="text" id="bar" name="query" placeholder="make a wish!" autoFocus="autofocus" />
@@ -92,16 +93,16 @@ function App() {
       </div>
       <div className="element_block" id="block">
         <div className="quit_line">
-          <div className="exit_button" onClick={showElement}>x</div>
+    {/*<div className="exit_button" onClick={showElement}>x</div>*/}
         </div>
         <div className="input_site">
           <div className="add_item">
             <form>
-              <span>Bookmark name</span><input type="text" value={inputName} onChange={getName} id="name" className="input_text" placeholder="google" />
-              <span>Bookmark link</span><input type="text" value={inputSite} onChange={getSite} id="site" className="input_text" placeholder="google.com" />
+              <span class="panel_text">Bookmark name</span><input type="text" value={inputName} onChange={getName} id="name" className="input_text" placeholder="google" />
+              <span class="panel_text">Bookmark link</span><input type="text" value={inputSite} onChange={getSite} id="site" className="input_text" placeholder="google.com" />
               <div className="check-button">
-                <input type="submit" className="send_button" value="Delete" onClick={showElement} />
-                <input type="submit" className="send_button" value="Confirm" onClick={createElement} />
+                <input type="submit" id="confirm_btn" className="send_button" value="Confirm" onClick={createElement} />
+                <input type="submit" id="cancel_btn" className="send_button" value="Cancel" onClick={showElement} />
               </div>
             </form>
           </div>
