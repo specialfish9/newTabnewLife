@@ -1,6 +1,6 @@
-# newTabnewLife
+# Psycho Tab New Life
 
-Homepage for my web browsers
+Restyling of [newTabNewLife from kocierik](https://github.com/kocierik/newTabnewLife)
 
 - `npm install` to install <em>node_modules</em>
 
